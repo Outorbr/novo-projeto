@@ -1,0 +1,53 @@
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.formulario .label-grande {
+    width: 50%;
+    text-align: right;
+    margin: 3px;
+}
+
+.formulario .linha-formulario {
+    margin-bottom: 15px;
+}
+
+.xp-line div {
+    display:inline-block;
+    width:40%
+}
+
+.label-grande .xp-line {
+    display: flex;
+    flex-direction: column;
+}
+
+@media sceen and (max-width:419px) {
+    .formulario input[type="text"] {
+        width: 100%;
+    }
+
+    .formulario .label-grande {
+        width: 100%;
+        text-align: center;
+    }
+
+    .xp-line {
+        flex-direction: column;
+    }
+
+    .xp-line div {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    } 
+}
