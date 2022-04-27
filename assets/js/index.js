@@ -3,24 +3,26 @@ if (peopleRaw != null) {
     var people = JSON.parse(localStorage.getItem('people'))
 } else {
     var people = [];
-}
+} 
+
+desenhaTabela()
 
 function desenhaTabela() {
 
-    currentLines = [...document.querySelectorAll('table.lista tbody .dinamic-content')];
-    currentLines.array.forEach((element) => {
+    currentLines = [...document.querySelectorAll('table.Lista tbody .dinamic-content')];
+    currentLines.forEach((element) => {
         element.remove()
     })
 
     for (person in people) {
         console.log(person)
-        document.querySelector('table.lista tbody').innerHTML +=
-            ` <tr class="dinamic-content" style=""background-color: ${((parson % 2 == 0) ? '#fff' : '#eee')}>
+        document.querySelector('table.Lista tbody').innerHTML += `
+         <tr class="dinamic-content" style=""background-color: ${((person % 2 == 0) ? '#fff' : '#eee')}>
             <td>
                 ${people[person].name}
             </td>
             <td>
-                ${people[person].tel}
+                ${people[person].Tel}
             </td>
             <td>
                 ${(people[person].xp ? '<strong style="color:green" Sim >' : '<strong style="color:red" Não >')}
@@ -31,10 +33,11 @@ function desenhaTabela() {
             </td>
         </tr> `
     }
+   
+}
 
-    function deleteUser(p) {
-        people.splice(p, 1);
-        desenhaTabela();
-        localStorage.setItem('people', JSON.stringify(people))
-    }
+function deleteUser(p) {
+    people.splice(p, 1);
+    desenhaTabela();
+    localStorage.setItem('people', JSON.stringify(people))
 }

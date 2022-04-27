@@ -3,7 +3,7 @@
     border-spacing: 0;
 }
 
-.lista tr:nth-child(1) {
+#inicio {
     vertical-align: top;
     background-color: black;
     color: white;
